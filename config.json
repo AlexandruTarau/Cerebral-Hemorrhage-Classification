@@ -1,0 +1,40 @@
+{
+  "train_csv": "../subdataset_train.csv",
+  "train_augmented_csv": "../subdataset_train_augmented.csv",
+  "test_csv": "../subdataset_test.csv",
+  "train_images": "../rsna-intracranial-hemorrhage-detection-png/train_images",
+  "train_augmented_images": "../train_augmented",
+  "test_images": "../rsna-intracranial-hemorrhage-detection-png/test_images",
+  "seed": 42,
+  "batch_size": 128,
+  "num_workers": 8,
+  "learning_rate": 1e-4,
+  "weight_decay": 1e-4,
+  "num_epochs": 100,
+  "threshold": 0.5,
+  "training_ratio": 0.8,
+  "k_folds": 5,
+  "transformations": {
+    "resize": [256, 256],
+    "gaussian_blur": true,
+    "ben_graham": false,
+    "clahe": true,
+    "sobel": false,
+    "normalize": true,
+    "sharpen": true
+  },
+  "augmentations": {
+    "random_rotation": true,
+    "horizontal_flip": true,
+    "vertical_flip": true,
+    "color_jitter": true,
+    "degrees": 30
+  },
+  "save_dir": "../models_etapa2_final/Test",
+  "model": {
+    "initial_filters": 64,
+    "num_fc1": 256,
+    "num_classes": 6,
+    "dropout_rate": 0.5
+  }
+}
